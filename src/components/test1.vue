@@ -24,10 +24,10 @@ export default {
     }
   },
   beforeCreate() {
-    console.log('beforeCreate执行');
+    console.log('beforeCreate执行了');
   },
   created() {
-    console.log('created执行');
+    console.log('created执行了');
   },
   mounted() {
     console.log(this.$route);
