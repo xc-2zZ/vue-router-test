@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router';
 import test1 from '../components/test1'
 import test2 from '../components/test2'
+import test3 from '../components/test3'
 import swk from '../components/swk1'
 
 
@@ -24,6 +25,10 @@ const router = new VueRouter({
         {
             path: '/test2',
             component: test2
+        },
+        {
+            path: '/test3',
+            component: test3
         },
     ]
 })

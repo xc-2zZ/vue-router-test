@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ aaa }}</h1>
-    <img src="../assets/images/xiaohuangren1.jpg" alt="小黄人" style="width: 300px; height: 500px"
+    <img src="../assets/images/xiaohuangren1.jpg" alt="小黄人" style="width: 300px; height: 450px"
     @click="toSWK">
     <router-view></router-view>
   </div>

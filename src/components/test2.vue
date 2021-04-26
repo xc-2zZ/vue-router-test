@@ -1,20 +1,10 @@
 <template>
   <div class="hello">
-    <button @click="initEchart">点击</button>
-    <h1>我是obj1</h1>
-    <ul>
-      <li>{{ obj1.name }}</li>
-      <li>{{ obj1.age }}</li>
-      <li>{{ obj1.gender }}</li>
-    </ul>
-    <div v-if="obj2">
-      <h1>我是obj2</h1>
-      <ul>
-        <li>{{ obj2.name }}</li>
-        <li>{{ obj2.age }}</li>
-        <li>{{ obj2.gender }}</li>
-      </ul>
-    </div>
+    <button @click="initChart">点击创建图表</button>
+    <button @click="increment">点击+10</button>
+    <button @click="incrementAsync">点击1S后+3</button>
+    <button @click="decrement">点击-5</button>
+    <h1>{{count}}</h1>
     <div id="echarts"></div>
   </div>
 </template>
@@ -39,13 +29,31 @@ export default {
       obj2: null
     }
   },
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
+  },
   methods: {
-    clone() {
-      console.log(this)
-      this.obj2 = this.obj1
-      console.log(this.obj1 == this.obj2);
+    decrement() {
+      this.$store.dispatch({
+        type: 'decrement',
+        num: 5
+      })
     },
-    initEchart() {
+    increment() {
+      this.$store.dispatch({
+        type: 'increment',
+        num: 10
+      })
+    },
+    incrementAsync() {
+      this.$store.dispatch({
+        type: 'incrementAsync',
+        num: 3
+      })
+    },
+    initChart() {
       let myChart = echarts.init(document.getElementById('echarts'))
       myChart.setOption({
         title: {
@@ -65,13 +73,14 @@ export default {
           {
             name: 'nn',
             type: 'pie',
-            data: [2,4,10,28,55]
+            data: [2, 4, 10, 28, 55]
           }]
       })
+
     }
   },
   mounted() {
-    console.log(this.$route);
+    // console.log(this.$store);
   }
 }
 </script>

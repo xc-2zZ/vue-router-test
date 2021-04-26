@@ -7,6 +7,24 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
+  <style>
+      body{
+          margin: 0;
+      }
+      .el-submenu .el-menu .el-menu-item,
+      .el-submenu .el-submenu .el-submenu__title {
+          padding-left: 70px !important;
+      }
+
+      .el-submenu .el-submenu .el-menu-item {
+          padding-left: 100px !important;
+      }
+      .el-menu-item:hover,
+      .el-menu-item.is-active {
+          background: #3070f0 !important;
+          color: #ffffff !important;
+      }
+  </style>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
